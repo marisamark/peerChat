@@ -9,6 +9,16 @@ module.exports = function(app) {
     })
   })
 
+  app.get('/api/lobbies/:id', function(req, res) {
+    db.Lobby.findAll({
+      where: {
+        id: req.params.id,
+      }
+    }).then(function (results) {
+      res.json(results)
+    })
+  })
+
   app.post("/api/lobbies", function (req, res) {
     let lobby = req.body
 

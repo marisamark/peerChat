@@ -6,6 +6,15 @@ var peer = new Peer(makeid(10), {
   
   peer.on('open', function (id) {
     console.log('Initializing PeerJS: ' + id);
+
+    let waitForPeer = setInterval(function() {
+        $.ajax({
+            method: "GET",
+            url: `/api/lobbies/${id}`
+        }).then(function(res) {
+
+        })
+    }, 500)
   
   });
 
@@ -17,9 +26,8 @@ var peer = new Peer(makeid(10), {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
   
-    localStorage.setItem("teotlPlayerID", result);
+    localStorage.setItem("userID", result);
   
     return result;
   }
 
-  
