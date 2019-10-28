@@ -39,4 +39,12 @@ module.exports = function(app) {
       })
       res.end();
     })
+
+    app.put("/api/lobbies/:id", function (req, res) {
+      db.Lobby.update(
+        {user2Id: JSON.stringify(req.body.user2Id) },
+        {where: {id: req.params.id}}
+      )
+      res.end();
+    })
 }
