@@ -7,6 +7,8 @@ var peer = new Peer('b', {
   debug: 3,
 });
 
+let conn;
+
 // var conn = peer.connect('a');
 // conn.on('error', function (err) {
 //   console.log(err)

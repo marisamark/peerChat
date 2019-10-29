@@ -5,7 +5,7 @@ const peer = new Peer('a', {
   port: 9000,
   debug: 3,
 });
-
+let conn;
 // var conn = peer.connect('b');
 
 // console.log(conn)

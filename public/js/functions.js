@@ -12,7 +12,7 @@ function makeid(length) { // Makes a random ID for peerJS
 }
 
 function initChat(id) {
-    let conn = peer.connect(id);
+    conn = peer.connect(id);
     peer.on('connection', function(conn) { // Listens for the opponents pick
         conn.on('data', function(data) {
             console.log(data);
@@ -23,7 +23,7 @@ function initChat(id) {
 
     $("#send").on("click", function () {
         // on open will be launch when you successfully connect to PeerServer
-        let conn = peer.connect(id);
+        conn = peer.connect(id);
         conn.on('open', function() {
             let data = $("#message").val()
             console.log(`DATA: ${data}`)
