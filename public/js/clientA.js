@@ -45,8 +45,9 @@ peer.on('open', function (id) {
       }).then(function (res) {
         if (res[0].user2Id) { // Check to see if peer has connected
           clearInterval(waitForPeer)
-          console.log(res[0].user2Id)
-          initChat('b')
+          let newID = res[0].user2Id.split(`"`)
+          console.log(newID)
+          initChat(newID[1])
         }
       })
     }, 1000)
