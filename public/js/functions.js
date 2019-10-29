@@ -10,3 +10,29 @@ function makeid(length) { // Makes a random ID for peerJS
 
     return result;
 }
+
+function initChat(id) {
+    let conn = peer.connect(id);
+    peer.on('connection', function(conn) { // Listens for the opponents pick
+        conn.on('data', function(data) {
+            console.log(data);
+            log += data + "<br>"
+            $('#log').html(log);
+        });
+    });
+
+    $("#send").on("click", function () {
+        // on open will be launch when you successfully connect to PeerServer
+        let conn = peer.connect(id);
+        conn.on('open', function() {
+            let data = $("#message").val()
+            console.log(`DATA: ${data}`)
+            conn.send(data);
+
+            log += data + "<br>"
+            $('#log').html(log);
+
+            $('#message').val("")
+        });
+    })
+}
