@@ -10,5 +10,3 @@ function makeid(length) { // Makes a random ID for peerJS
 
     return result;
 }
-
-module.exports = makeid;
