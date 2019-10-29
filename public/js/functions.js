@@ -16,7 +16,7 @@ function initChat(id) {
     peer.on('connection', function(conn) { // Listens for the opponents pick
         conn.on('data', function(data) {
             console.log(data);
-            log += data + "<br>"
+            log += "Peer: " + data + "<br>"
             $('#log').html(log);
         });
     });
@@ -29,7 +29,7 @@ function initChat(id) {
             console.log(`DATA: ${data}`)
             conn.send(data);
 
-            log += data + "<br>"
+            log += "You: " + data + "<br>"
             $('#log').html(log);
 
             $('#message').val("")

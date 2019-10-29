@@ -1,27 +1,11 @@
 let log = ""
 
-const peer = new Peer('a', {
+const peer = new Peer(makeid(10), {
   host: '74.207.252.238',
   port: 9000,
   debug: 3,
 });
 let conn;
-// var conn = peer.connect('b');
-
-// console.log(conn)
-// // on open will be launch when you successfully connect to PeerServer
-// conn.on('open', function () {
-//   // here you have conn.id
-//   conn.send('hi!');
-// });
-
-// peer.on('connection', function (conn) {
-//   conn.on('data', function (data) {
-//     // Will print 'hi!'
-//     console.log(data);
-//   });
-// });
-
 
 
 let name = "Bob sagget"
@@ -45,8 +29,9 @@ peer.on('open', function (id) {
       }).then(function (res) {
         if (res[0].user2Id) { // Check to see if peer has connected
           clearInterval(waitForPeer)
-          console.log(res[0].user2Id)
-          initChat('b')
+          let newID = res[0].user2Id.split(`"`)
+          console.log(newID)
+          initChat(newID[1])
         }
       })
     }, 1000)
