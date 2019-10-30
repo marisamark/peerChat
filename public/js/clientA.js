@@ -1,3 +1,4 @@
+
 let name = localStorage.getItem("rm_name")
 let log = ""
 
@@ -34,12 +35,18 @@ peer.on('open', function (id) {
           let newID = res[0].user2Id.split(`"`)
           console.log(newID)
           initChat(newID[1])
+          
+          $.ajax({
+            method: 'DELETE',
+            url: `api/lobbies/${id}`,
+          })
         }
       })
     }, 1000)
   });
 
 });
+
 
 
 

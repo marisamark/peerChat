@@ -32,6 +32,7 @@ module.exports = function(app) {
   })
 
     app.delete("/api/lobbies/:id", function (req, res) {
+      console.log(`DELETING ${req.params.id}`)
       db.Lobby.destroy({
         where: {
           id: req.params.id
