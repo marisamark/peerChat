@@ -1,6 +1,7 @@
 let log = ""
 let userID = localStorage.getItem('PeerChatID');
-let nam = localStorage.getItem('rm_name')
+let name = localStorage.getItem('rm_name')
+userID = "a"
 
 
 var peer = new Peer(makeid(10), {

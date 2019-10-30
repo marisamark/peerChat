@@ -2,7 +2,7 @@
 let name = localStorage.getItem("rm_name")
 let log = ""
 
-const peer = new Peer(makeid(10), {
+const peer = new Peer('a', {
   host: '74.207.252.238',
   port: 9000,
   debug: 3,
@@ -35,13 +35,10 @@ peer.on('open', function (id) {
           let newID = res[0].user2Id.split(`"`)
           console.log(newID)
           initChat(newID[1])
-
+          
           $.ajax({
             method: 'DELETE',
-            url: `api/lobbies/`,
-            where: {
-              id: id,
-            }
+            url: `api/lobbies/${id}`,
           })
         }
       })
@@ -49,6 +46,7 @@ peer.on('open', function (id) {
   });
 
 });
+
 
 
 
