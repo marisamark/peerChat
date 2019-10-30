@@ -1,0 +1,31 @@
+#welcometopeerchat {
+    margin-top:50px;
+    margin-bottom: 30px;
+}
+
+#selectalobby{
+    margin-top: 20px;
+    margin-bottom:20px;
+}
+
+#buttonsrow {
+    margin-top: 20px;
+    margin-bottom:20px;
+    position: fixed;
+    bottom: 0px;
+
+}
+
+#messagebox {
+    width: 500px;
+    height: 800px;
+}
+
+#textarea{
+    position: fixed;
+    bottom: 50px;
+    margin-top: 20px;
+    margin-bottom:20px;
+    width: 477px;
+    }
+
