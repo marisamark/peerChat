@@ -29,3 +29,27 @@
     width: 477px;
     }
 
+h2 {
+    margin-top: 20px;
+    margin-bottom:20px;
+
+}
+
+#create {
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+#existinglobbydiv {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: rgb(196, 205, 255);
+    color: white;
+  
+}
+
+#createlobby {
+    padding: 20px;
+    margin-top: 20px;
+    background-color:rgb(196, 205, 255);
+}
