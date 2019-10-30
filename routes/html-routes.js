@@ -30,12 +30,12 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/clientB.html"));
   });
 
-  app.get("/chat", function(req, res) {
+  app.get("/lobbies", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/chat");
+      res.redirect("/lobbies");
     }
-    res.sendFile(path.join(__dirname, "../public/chat.html"));
+    res.sendFile(path.join(__dirname, "../public/lobbies.html"));
   });
 
   // Here we've add our isAuthenticated middleware to this route.
