@@ -2,7 +2,7 @@
 let name = localStorage.getItem("rm_name")
 let log = ""
 
-const peer = new Peer('a', {
+const peer = new Peer(makeid(10), {
   host: '74.207.252.238',
   port: 9000,
   debug: 3,
