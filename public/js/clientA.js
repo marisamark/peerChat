@@ -1,3 +1,4 @@
+let name = localStorage.getItem("rm_name")
 let log = ""
 
 const peer = new Peer(makeid(10), {
@@ -8,7 +9,8 @@ const peer = new Peer(makeid(10), {
 let conn;
 
 
-let name = "Bob sagget"
+
+$('#lobbyName').text(name);
 
 peer.on('open', function (id) {
   console.log('Initializing PeerJS: ' + id);
