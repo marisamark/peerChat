@@ -5,7 +5,7 @@ exports.configure = function(env) {
 let configs = {
   "development": {
     "username": "rlxnqsja44klcajj",
-    "password": `s1qcfcs3tpyr20o9`,
+    "password": `${process.env.DB_PASSWORD}`,
     "database": "g2ps5360opx8dun9",
     "host": "d13xat1hwxt21t45.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
