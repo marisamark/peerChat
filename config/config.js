@@ -4,10 +4,11 @@ exports.configure = function(env) {
 
 let configs = {
   "development": {
-    "username": 'root', //"rlxnqsja44klcajj",
+    "username": "root",
     "password": `${process.env.DB_PASSWORD}`,
-    "database": 'lobbies_db' ,//"g2ps5360opx8dun9",
-    "host": "localhost",  //"d13xat1hwxt21t45.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "database": "lobbies_db",
+    "host": "localhost",
+
     "dialect": "mysql"
   },
   "test": {
