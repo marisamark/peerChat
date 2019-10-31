@@ -6,7 +6,7 @@ let name = localStorage.getItem('rm_name')
 const peer = new Peer( { //makeid(10)
   // host: 'li94-238.members.linode.com', //74.207.252.238
   // port: 9000,
-  // debug: 3,
+  debug: 3,
 });
 
 let conn;
