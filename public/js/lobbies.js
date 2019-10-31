@@ -9,11 +9,11 @@ $(document).ready(() => {
             let lobby = $("<div>")
             let button = $("<button>")
 
-            lobby.text(res[i].lobby_name)
+            lobby.html(res[i].lobby_name + "&nbsp; &nbsp; &nbsp;")
             button.text('Join')
 
             button.attr("class", 'button is-link')
-            lobby.attr("class", "has-text-centered")
+            lobby.attr("class", "has-text-centered card")
             button.attr("name", res[i].lobby_name)
             button.attr("userID", res[i].id)
 
