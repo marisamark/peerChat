@@ -1,5 +1,7 @@
-nav {
-    width: auto;
+
+navbar {
+    width:100%;
+
     margin-bottom: 30px;
 }
 
@@ -97,5 +99,8 @@ margin-bottom: 20px;
     }
     .bottom {
         position: relative;
+    }
+    #messagebox {
+        width: 400px;
     }
   }
