@@ -13,11 +13,13 @@ function makeid(length) { // Makes a random ID for peerJS
 
 function initChat(id) {
     conn = peer.connect(id);
-    peer.on('connection', function(conn) { // Listens for the opponents pick
+    peer.on('connection', function(conn) { 
         conn.on('data', function(data) {
             console.log(data);
-            log += "Peer: " + data + "<br>"
-            $('#log').html(log);
+            let $log = $("<div>")
+            $log.text("Peer: " + data)
+            $log.css('color', 'red')
+            $('#log').append($log);
         });
     });
 
@@ -29,8 +31,10 @@ function initChat(id) {
             console.log(`DATA: ${data}`)
             conn.send(data);
 
-            log += "You: " + data + "<br>"
-            $('#log').html(log);
+            let $log = $("<div>")
+            $log.text("Peer: " + data)
+            $log.css('color', 'blue')
+            $('#log').append($log);
 
             $('#message').val("")
         });
