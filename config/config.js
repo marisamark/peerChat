@@ -8,6 +8,7 @@ let configs = {
     "password": `${process.env.DB_PASSWORD}`,
     "database": "lobbies_db",
     "host": "localhost",
+
     "dialect": "mysql"
   },
   "test": {
