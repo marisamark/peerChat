@@ -12,8 +12,8 @@ $(document).ready(() => {
             lobby.text(res[i].lobby_name)
             button.text('Join')
 
-            button.attr("class", 'button')
-
+            button.attr("class", 'button is-link')
+            lobby.attr("class", "has-text-centered")
             button.attr("name", res[i].lobby_name)
             button.attr("userID", res[i].id)
 
