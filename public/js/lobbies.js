@@ -9,7 +9,7 @@ $(document).ready(() => {
             let lobby = $("<div>")
             let button = $("<button>")
 
-            lobby.html(res[i].lobby_name + "&nbsp; &nbsp; &nbsp;")
+            lobby.html("<b> " + res[i].lobby_name + "</b>&nbsp; &nbsp; &nbsp;")
             button.text('Join')
 
             button.attr("class", 'button is-link')

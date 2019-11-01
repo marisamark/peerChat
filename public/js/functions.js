@@ -13,12 +13,16 @@ function makeid(length) { // Makes a random ID for peerJS
 
 function initChat(id) {
     conn = peer.connect(id);
-    peer.on('connection', function(conn) { 
-        conn.on('data', function(data) {
+    peer.on('connection', function (conn) {
+        conn.on('data', function (data) {
             console.log(data);
             let $log = $("<div>")
-            $log.text("Peer: " + data)
-            $log.css('color', 'red')
+            $log.text(data)
+
+            if (data != "Peer Connected!") {
+                $log.css('color', 'red')
+            }
+
             $('#log').append($log);
         });
     });
@@ -26,13 +30,13 @@ function initChat(id) {
     $("#send").on("click", function () {
         // on open will be launch when you successfully connect to PeerServer
         conn = peer.connect(id);
-        conn.on('open', function() {
+        conn.on('open', function () {
             let data = $("#message").val()
             console.log(`DATA: ${data}`)
-            conn.send(data);
+            conn.send('Peer: ' + data);
 
             let $log = $("<div>")
-            $log.text("Peer: " + data)
+            $log.text("You: " + data)
             $log.css('color', 'blue')
             $('#log').append($log);
 
